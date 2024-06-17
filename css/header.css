@@ -1,0 +1,25 @@
+
+body{
+    background-color: #ecf0f1;
+}
+.bg-ecletica{
+    background-color: #2980b9;
+}
+
+
+.btn-ecletica{
+    background-color: gray;
+    color: white;
+    /* font-weight: bold; */
+}
+
+.btn-ecletica:hover{
+    background-color:#024a7a;
+    color: white;
+    font-weight: bold;
+}
+
+
+.bg-cinza{
+    background-color: gray;
+}

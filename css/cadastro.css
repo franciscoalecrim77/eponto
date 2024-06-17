@@ -1,0 +1,151 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #ecf0f1;
+    display: inline;
+}
+.header{
+    height: 90px;
+    width: 100%;
+    display: inline-block;
+    background-color: #2980b9;
+}
+
+.header .logo{
+    display: inline-block;
+    height: 89px;
+    clear: both;
+    width: 167px;
+
+}
+.cadastro{
+    text-align: center;
+    align-items: center;
+}
+
+.formulario{
+    
+    margin: 0 auto;
+    max-width: 1000px;
+    box-sizing: border-box;
+    display: inline-grid;
+    padding: 10px;
+
+}
+
+
+
+.cadastro .caixaBasico{
+    display: flex;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-bottom: 19px;
+    padding: 20px;
+    align-items: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: flex-start;
+}
+
+.cadastro .caixaEndereco{
+    height: 100px;
+    font-weight: 600;
+    border-radius: 10px;
+    display: inline;
+}
+.descricao{
+    /* text-align: left; */
+    /* background-color: red; */
+    margin-right: 20px;
+}
+.dadosEndereco{
+    display: flex;
+    text-align: right;
+    flex-direction: row;
+    height: 60px;
+    margin: 10px 10px;
+    flex-wrap: wrap;
+    align-content: space-between;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.cep{
+    width: 70px;
+    text-align: center;
+    /* background-color: red; */
+}
+
+.logradouro{
+    width: 20px;
+    text-align: center;
+}
+
+.bairro{
+    width:150px;
+}
+
+.endereco{
+    width: 200px;
+    text-align: left;
+}
+.numero{
+    width: 50px;
+}
+
+.estado{
+    /* background-color:  */
+    width: 120px;
+}
+.cidade{
+    width: 100px;
+}
+.uf{
+    width: 34px;
+}
+
+.cadastrar{
+    display: inline-block;
+    margin-top: 10px;
+    /* background-color: red; */
+    text-align: left;
+}
+
+.btn{
+    font-size: 16px;
+    width: 100px;
+    padding: 9px;
+    background-color: #737373;
+    color: white;
+    border-radius: 10px;
+}
+
+
+
+.cpf{
+    width: 110px;
+    margin-right: 30px;
+}
+
+.nome{
+    width:300px;
+    margin-left: 10px;
+    margin-right: 30px;
+}
+
+.nasc{
+    width: 120px;
+}
+
+.btn:hover{
+    background-color: #2980b9;
+    
+}
+
+
+
