@@ -17,47 +17,35 @@ endforeach;
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerencial</title>
     <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" type="text/css"  href="css/teste.css" />
     <script type="text/javascript" src="js/header.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
-		<script type="text/javascript">
-			jQuery(window).load(function($){
-				atualizaRelogio();  
-			});
-		</script>
-    
+    <script type="text/javascript" src="/js/header.js"></script>
+    <script type="text/javascript">
+        jQuery(window).load(function ($) {
+            atualizaRelogio();
+        });
+            
+    </script>
 </head>
 <body>
-    
-    <header>
-        <div class="header">
-            <img class="logo" src="img/ecletica.jpg" alt="a" >            
-            <output id="hora" class="hora"></output>
-            <output id="data" class="data"></output>        
-            <p class="usuario"><?php echo "Seja bem vindo - " . $validado['nome'] . ' ! ';?></p>
-            <p class="titulo">Controle de ponto</p>
-            <a href="registro.php" class="registrar">Registrar</a>
-            <a href="logout.php" class="BotaoSair">Sair</a>
+    <header class="header">
+        <img src="/img/ecletica.jpg" alt="">
+        <h1 class="titulo">Sistema Gerenciador de Ponto Eletronico </h1>
+
+        <div class="sessao">
+            <div class="usuarioLogado">Usuario Logado: <?php echo $validado['nome']?></div>
+            <div class="empresa">Empresa: Prestsoft soluções em informatica</div>
+            <div class="cnpj">CNPJ: 02143500000108</div>
+            <div class="dataHora"><output id="hora" class="hora"></output> - <output id="data" class="data"></output></div>
+            <button class="registro" action="registro.php"><a href="registro.php">Registrar</a></button>
         </div>
-        
-		
     </header>
-           
 
-        <div>
-            <form action="" method="post">
 
-            </form>
-        </div>
-        
-
+    <footer class="footer">Desenvolvido por: Francisco Alecrim Tamberi</footer>
 </body>
-
-<script>
-    
-</script>
 </html>

@@ -1,5 +1,5 @@
 <?php
-include './library/db.php';
+include 'library/db.php';
 require_once 'vendor/autoload.php';
 
 
@@ -7,7 +7,22 @@ setlocale(LC_ALL, "pt_BR", "pt_BR.utf-8", "portuguese");
 date_default_timezone_set('America/Sao_Paulo');
 
 function retorna($cpf, $mysqli){
-    $result_analista = "select * from pessoas where cpf = '$cpf'";
+    $result_analista = "select
+	p.cpf,
+	p.nome,
+	p.data_nasc,
+	e.cep,
+	e.endereco,
+	e.numero,
+	e.complemento,
+	e.bairro,
+	e.cidade,
+	e.estado,
+    e.uf
+from
+	eponto.enderecos e 
+inner join eponto.pessoas p on
+	p.cpf = '$cpf'";
     $resultado_analista = mysqli_query($mysqli, $result_analista);
     if($resultado_analista->num_rows > 0){
         $row_analista = mysqli_fetch_array($resultado_analista);

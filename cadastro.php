@@ -23,7 +23,6 @@ $cidade =      (empty($_POST['cidade']))? false : $_POST['cidade'];
 $estado =      (empty($_POST['estado']))? false : $_POST['estado'];
 $uf =          (empty($_POST['uf']))? false : $_POST['uf'];
 
-
 $ativo = "S";
 $categoria = 1;
 
@@ -37,15 +36,13 @@ $cadPessoasDao = new \app\model\cadPessoasDao();
 $cadPessoasDao->Validar($informacpf);
 
 foreach($cadPessoasDao->Validar($informacpf) as $resultado):
+    $res = $resultado;
 endforeach;
 
-    if($resultado['cpf'] == $cpfajustado){
-        $consulta = new \app\model\cadPessoas();
-        $consulta->setNome($resultado['nome']);
-        //echo "<script>alert('teste')</script>";
-        // echo "<pre>";
-        // print_r($consulta);
-    }
+    // if($resultado['cpf'] == $cpfajustado){
+    //     $consulta = new \app\model\cadPessoas();
+    //     $consulta->setNome($resultado['nome']);
+    // }
 
     if((!empty($nome) && ($datanasc) && ($cpfajustado)) && $resultado == ''){
 
@@ -56,16 +53,16 @@ endforeach;
         $pessoa->setCategoria($categoria);
         $pessoa->setAtivo($ativo);        
         $cadPessoasDao = new app\Model\cadPessoasDao();
-        $cadPessoasDao->create($pessoa);
+        $cadPessoasDao->create($pessoa); // Insere usuario no banco.
         
         $id_pessoa_consulta = new \app\model\cadPessoasDao(); 
         $id_pessoa_consulta->pegaId($informacpf);
 
         foreach($id_pessoa_consulta->pegaId($informacpf) as $id_novo):
             $id_tratado = $id_novo['id'];
-            // echo "<pre>";
             // var_dump($id_tratado);
         endforeach;
+    
 
         $enderecoPessoa = new \app\model\cadEnderecos();
         $enderecoPessoa->setPessoaId($id_tratado);

@@ -24,7 +24,6 @@ class cadPessoasDao{
     }
 
     public function Validar(cadPessoas $c){
-          //$sql = 'SELECT * FROM usuarios where cpf = ?';
             $sql = 'SELECT * FROM pessoas where cpf = ?';
             $stmt = Conn::getConn()->prepare($sql);  
             $stmt->bindValue(1, $c->getCPF());

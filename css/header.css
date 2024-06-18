@@ -1,25 +1,98 @@
-
-body{
-    background-color: #ecf0f1;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.bg-ecletica{
+
+header{
+    display: flex;
+    height: 100px;
     background-color: #2980b9;
+    gap: 23%;
 }
 
+header img{
+    width: 200px;
+    height: 80px;
+    margin-left: 50px;
+    margin-top: 10px;
+    border-radius: 12px;
+}
 
-.btn-ecletica{
-    background-color: gray;
+header .titulo{
+    /* background-color: red; */
+    height: 30px;
+    font-weight: 900 bold;
+    font-size: 30px;
     color: white;
-    /* font-weight: bold; */
+    margin-top: 35px;
+    display: inline-block;
+    /* margin-left: 25%; */
 }
 
-.btn-ecletica:hover{
-    background-color:#024a7a;
+header .sessao{
+    display: inline-block;
+    /* background-color: red; */
+    margin-top: 5px;
+}
+header .sessao .usuarioLogado{
+    margin-top: 5px;
+    font-size: 14px;
     color: white;
-    font-weight: bold;
+    /* background-color: red; */
+    
+}
+
+header .sessao .empresa{
+    margin-top: 5px;
+    font-size: 14px;
+    color: white;
+}
+
+header .sessao .cnpj{
+    margin-top: 5px;
+    font-size: 14px;
+    color: white;
+    
+}
+
+header .sessao .registro{
+    
+    font-size: 15px;
+    height: 30px;
+    width: 80px;
+    color: white;
+    background-color: #aaa;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 0;
+    position: relative;
+    bottom: 10px;
+    
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+header .sessao .dataHora{
+    font-size: 15px;
+    margin-top: 5px;
+    color: white;
+    display: inline-block;
+}
+
+header .sessao .registro:hover{
+    background-color: rgb(88, 86, 86);
 }
 
 
-.bg-cinza{
-    background-color: gray;
+footer{
+    width: 100%;
+    text-align: center;
+    font-weight: 500 bold;
+    color: white;
+    background-color: #2980b9;
+    height: 20px;
+    bottom: 0;
+    position: absolute;
 }
