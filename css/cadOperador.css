@@ -1,0 +1,92 @@
+fieldset {
+     font-size: 20px;
+     margin-top: 10px;
+     max-width: 1000px;
+     margin-left: 450px;
+     text-align: center;
+     border-top: 1px solid #333;
+     border-bottom: none;
+     border-left: none;
+     border-right: none;
+     font-weight: 400;     
+}
+fieldset legend {
+    margin-top: 10px;
+    padding: 5px 10px;
+}
+
+.dadosOperador{
+    margin-top: 10px;
+    display: flex;
+
+ }
+.dadosOperador{
+    display: inline-block;
+    padding: 10px;
+    margin-left: 550px;
+    width: 800px;
+}
+
+.divOperadorCPF{
+    display: block;
+    height:40px;
+    /* background-color: blue; */
+}
+
+.labelOperadorCpf{
+    font-weight: 400;
+    display: inline;
+    /* width: 50px; */
+    font-size: 20px;
+}
+
+.operadorCpf{
+    /* margin-left: 109px; */
+    width: 200px;
+    font-size: 15px;
+}
+
+.divOperadorEmail{
+    display: inline-block;
+    /* background-color: rgb(2, 0, 0); */
+    height: 32px;
+    width: 400px;
+}
+
+.labelOperadorEmail{
+    font-weight: 400;
+    display: inline;
+    font-size: 20px;
+}
+
+.operadorEmail{
+    margin-left: 15px;
+    width: 200px;
+    font-size: 15px;
+}
+
+.divOperadorPassword{
+    display: inline;
+    height: 32px;
+    width: 400px;
+}
+
+.labelOperadorPassword{
+    font-weight: 400;
+    display: inline;
+    font-size: 20px;
+}
+
+.operadorPassoword{
+    font-weight: 400;
+    display: inline;
+    font-size: 20px;
+}
+
+.btnCadOperador{
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 100px;
+    height: 30px;
+}
