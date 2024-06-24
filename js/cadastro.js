@@ -173,7 +173,8 @@ function mascara(i){
  $(document).ready(function(){
             
     $("input[name='cpf']").blur(function(){
-            
+        
+        
         var $nome_analista = $("input[name='nome']");
         var $nasc_analista = $("input[name='datanasc']");
         var $cep = $("input[name='cep']");
@@ -188,16 +189,33 @@ function mascara(i){
         $.getJSON('function.php',{
             cpf: $ (this).val().replace(/[^\d]/g, '')
         }, function(json){
-            $nome_analista.val(json.nome);
-            $nasc_analista.val(json.data_nasc);
-            $cep.val(json.cep);
-            $endereco.val(json.endereco);
-            $numero.val(json.numero);
-            $complemento.val(json.complemento);
-            $bairro.val(json.bairro);
-            $cidade.val(json.cidade);
-            $estado.val(json.estado);
-            $uf.val(json.uf);
+            if(json.cpf){
+                $nome_analista.val(json.nome);
+                $nasc_analista.val(json.data_nasc);
+                $cep.val(json.cep);
+                $endereco.val(json.endereco);
+                $numero.val(json.numero);
+                $complemento.val(json.complemento);
+                $bairro.val(json.bairro);
+                $cidade.val(json.cidade);
+                $estado.val(json.estado);
+                $uf.val(json.uf);
+                $(".btn").val('atualizar');
+
+            }else{
+                $nome_analista.val('');
+                $nasc_analista.val('');
+                $cep.val('');
+                $endereco.val('');
+                $numero.val('');
+                $complemento.val('');
+                $bairro.val('');
+                $cidade.val('');
+                $estado.val('');
+                $uf.val('');
+                $(".btn").val('Cadastrar');
+            }
+
 
 
         });

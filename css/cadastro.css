@@ -1,151 +1,377 @@
 *{
-    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    
 }
-
 body{
     background-color: #ecf0f1;
-    display: inline;
-}
-.header{
-    height: 90px;
-    width: 100%;
-    display: inline-block;
-    background-color: #2980b9;
-}
-
-.header .logo{
-    display: inline-block;
-    height: 89px;
-    clear: both;
-    width: 167px;
-
-}
-.cadastro{
-    text-align: center;
-    align-items: center;
-}
-
-.formulario{
     
-    margin: 0 auto;
-    max-width: 1000px;
-    box-sizing: border-box;
-    display: inline-grid;
-    padding: 10px;
-
 }
-
-
-
-.cadastro .caixaBasico{
+header{
     display: flex;
-    font-weight: 600;
-    border-radius: 10px;
-    margin-bottom: 19px;
-    padding: 20px;
-    align-items: flex-end;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: space-between;
-    justify-content: flex-start;
-}
-
-.cadastro .caixaEndereco{
     height: 100px;
-    font-weight: 600;
-    border-radius: 10px;
-    display: inline;
-}
-.descricao{
-    /* text-align: left; */
-    /* background-color: red; */
-    margin-right: 20px;
-}
-.dadosEndereco{
-    display: flex;
-    text-align: right;
-    flex-direction: row;
-    height: 60px;
-    margin: 10px 10px;
-    flex-wrap: wrap;
-    align-content: space-between;
-    align-items: flex-end;
-    justify-content: flex-start;
+    background-color: #2980b9;
+    gap: 23%;
 }
 
-.cep{
-    width: 70px;
-    text-align: center;
-    /* background-color: red; */
-}
-
-.logradouro{
-    width: 20px;
-    text-align: center;
-}
-
-.bairro{
-    width:150px;
-}
-
-.endereco{
+header img{
     width: 200px;
-    text-align: left;
-}
-.numero{
-    width: 50px;
-}
-
-.estado{
-    /* background-color:  */
-    width: 120px;
-}
-.cidade{
-    width: 100px;
-}
-.uf{
-    width: 34px;
-}
-
-.cadastrar{
-    display: inline-block;
+    height: 80px;
+    margin-left: 50px;
     margin-top: 10px;
-    /* background-color: red; */
-    text-align: left;
+    border-radius: 12px;
 }
-
-.btn{
-    font-size: 16px;
-    width: 100px;
-    padding: 9px;
-    background-color: #737373;
+section{
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    
+}
+header .titulo{
+    height: 30px;
+    font-weight: 900 bold;
+    font-size: 30px;
     color: white;
-    border-radius: 10px;
+    margin-top: 35px;
+    display: inline-block;
+
 }
 
+header .sessao{
+    display: inline-block;
 
+    margin-top: 5px;
+}
+header .sessao .usuarioLogado{
+    margin-top: 5px;
+    font-size: 14px;
+    color: white;
+
+    
+}
+
+header .sessao .empresa{
+    margin-top: 5px;
+    font-size: 14px;
+    color: white;
+}
+
+header .sessao .cnpj{
+    margin-top: 5px;
+    font-size: 14px;
+    color: white;
+    
+}
+
+header .sessao .registro{
+    font-size: 15px;
+    height: 30px;
+    width: 80px;
+    color: white;
+    background-color: #aaa;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 0;
+    position: relative;
+    bottom: 10px;
+    
+}
+header .sessao .dataHora{
+    font-size: 15px;
+    margin-top: 5px;
+    color: white;
+    display: inline-block;
+}
+
+header .sessao .registro:hover{
+    background-color: rgb(88, 86, 86);
+}
+
+body h2{
+    margin-top: 10px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.cadastroBasico{
+   display: flex;
+}
+
+fieldset {
+    font-size: 20px;
+    margin-top: 10px;
+    max-width: 1000px;
+    margin-left: 450px;
+    text-align: center;
+    border-top: 1px solid #333;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    font-weight: 400;     
+ }
+ fieldset legend {
+     padding: 5px 10px;
+ }
+
+.dadosBasicos1{
+    display: block;
+    padding: 10px;
+    margin-left: 550px;
+    width: 420px;
+    /* border: 10px solid #ccc; */
+}
+.divCPF{
+    display: inline-block;
+    height: 30px;
+    width: 400px;
+}
+.labelCPF{
+    font-weight: 400;
+    display: inline;
+    /* width: 50px; */
+    font-size: 20px;
+}
 
 .cpf{
-    width: 110px;
-    margin-right: 30px;
+    margin-left: 109px;
+    width: 200px;
+    font-size: 15px;
+}
+
+.divNOME{
+    height: 32px;
+    width: 400px;
+}
+.labelNome{
+    font-weight: 400;
+    display: inline;
+    font-size: 20px;
 }
 
 .nome{
-    width:300px;
-    margin-left: 10px;
-    margin-right: 30px;
+    width: 200px;
+    font-size: 15px;
 }
-
+.divNASC{
+    height: 32px;
+    width: 400px;
+}
+.labelNASC{
+    font-weight: 400;
+    font-size: 15px;
+    /* display: inline; */
+    font-size: 20px;
+}
 .nasc{
-    width: 120px;
+    text-align: left;
+    margin-left: 38px;
+    font-size: 15px;
+    width: 200px;
 }
 
-.btn:hover{
-    background-color: #2980b9;
+.divEMPRESA{
+    display: inline;
+    height: 30px;
+    width: 400px;
+}
+
+.labelEMPRESA{
+    font-weight: 400;
+    font-size: 20px;
+}
+.selectEmpresa{
+    margin-left: 67px;
+    font-size: 15px;
+    width: 200px;
+}
+
+.dadosBasicos2{
+    
+    display: block;
+    padding: 10px;
+    /* margin-left: 550px; */
+    width: 420px;
+    /* border: 10px solid #ccc; */
+}
+.divATIVO{
+    font-weight: 400;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.cadastroEndereco{
+    display: flex;
     
 }
+.dadosEndereco1{
+    display: block;
+    padding: 10px;
+    margin-left: 550px;
+    width: 420px;
+}
 
+.dadosEndereco2{   
+    display: block;
+    padding: 10px;
+    width: 420px;
+}
 
+.divCEP{
+    display: inline-block;
+    height: 30px;
+    width: 400px;
+}
+.labelCEP{
+    font-weight: 400;
+    display: inline;
+    /* width: 50px; */
+    font-size: 20px;
+}
+.cep{
+    margin-left: 109px;
+    width: 200px;
+    font-size: 15px;
+}
 
+.divENDERECO{
+    display: inline-block;
+    height: 30px;
+    width: 400px;
+}
+.labelENDERECO{
+    font-weight: 400;
+    display: inline;
+    font-size: 20px;
+}
+.endereco{
+    margin-left: 63px;
+    width: 200px;
+    font-size: 15px;
+}
+
+.divNUMERO{
+    display: inline-block;
+    height: 30px;
+    width: 400px;
+}
+.labelNUMERO{
+    font-weight: 400;
+    display: inline;
+    /* width: 50px; */
+    font-size: 20px;
+}
+.numero{
+    margin-left: 75px;
+    width: 200px;
+    font-size: 15px;
+}
+
+.divCOMPLEMENTO{
+    display: inline-block;
+    height: 30px;
+    width: 400px;
+}
+.labelCOMPLEMENTO{
+    font-weight: 400;
+    display: inline;
+    /* width: 50px; */
+    font-size: 20px;
+}
+.complemento{
+    margin-left: 21px;
+    width: 200px;
+    font-size: 15px;
+}
+
+.divBAIRRO{
+    display: inline-block;
+    height: 30px;
+    width: 400px;
+}
+.labelBAIRRO{
+    font-weight: 400;
+    display: inline;
+    /* width: 50px; */
+    font-size: 20px;
+}
+.bairro{
+    margin-left: 109px;
+    width: 200px;
+    font-size: 15px;
+}
+
+.divCIDADE{
+    display: inline-block;
+    height: 30px;
+    width: 400px;
+}
+.labelCIDADE{
+    font-weight: 400;
+    display: inline;
+    /* width: 50px; */
+    font-size: 20px;
+}
+.cidade{
+    margin-left: 100px;
+    width: 200px;
+    font-size: 15px;
+}
+
+.divESTADO{
+    display: inline-block;
+    height: 30px;
+    width: 400px;
+}
+.labelESTADO{
+    font-weight: 400;
+    display: inline;
+    /* width: 50px; */
+    font-size: 20px;
+}
+.estado{
+    margin-left: 101px;
+    width: 200px;
+    font-size: 15px;
+}
+.divUF{
+    display: inline-block;
+    height: 30px;
+    width: 400px;
+}
+.labelUF{
+    font-weight: 400;
+    display: inline;
+    /* width: 50px; */
+    font-size: 20px;
+}
+.uf{
+    margin-left: 138px;
+    width: 200px;
+    font-size: 15px;
+}
+
+footer{
+    width: 100%;
+    text-align: center;
+    font-weight: 500 bold;
+    color: white;
+    background-color: #2980b9;
+    height: 20px;
+    bottom: 0;
+    position: fixed;
+}
+
+.cadastrar{
+        display: inline-block;
+        margin: 0 auto;
+        margin-top: 45px;
+        margin-left: 470px;
+}
+
+.btn{
+    border-radius: 5px;
+    font-size: 15px;
+    width: 100px;
+    height: 30px;
+}
