@@ -53,7 +53,19 @@ class cadPessoasDao{
         $resultado = $stmt->fetchALL(\PDO::FETCH_ASSOC);
         return $resultado;
    }
+
+   public function update(CadPessoas $cd) {
+    $sql = 'UPDATE pessoas SET nome = ?, data_nasc = ?, ativo = ?, categoria_id = ? WHERE cpf = ?';
+    $stmt = Conn::getConn()->prepare($sql);
+    $stmt->bindValue(1, $cd->getNome());
+    $stmt->bindValue(2, $cd->getdataNasc());
+    $stmt->bindValue(3, $cd->getAtivo());
+    $stmt->bindValue(4, $cd->getCategoria());
+    $stmt->bindValue(5, $cd->getCPF());
+    $stmt->execute();
 }
+}
+
 
 ?>
 

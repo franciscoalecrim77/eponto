@@ -39,5 +39,14 @@ class cadUsuarioDao{
         $consulta = $stmt->fetchALL(\PDO::FETCH_ASSOC);
         return $consulta;
     }
+
+    public function update(cadUsuario $update){
+        $sql = "UPDATE usuarios SET email = ?, senha = ? WHERE pessoa_id = ?";
+        $stmt = Conn::getConn()->prepare($sql);
+        $stmt->bindValue(1, $update->getEmail());
+        $stmt->bindValue(2, $update->getPassword());
+        $stmt->bindValue(3, $update->getPessoaId());
+        $stmt->execute();
+    }
 }
 ?>
