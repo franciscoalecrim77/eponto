@@ -26,6 +26,7 @@ inner join eponto.pessoas p on
     $resultado_analista = mysqli_query($mysqli, $result_analista);
     if($resultado_analista->num_rows > 0){
         $row_analista = mysqli_fetch_array($resultado_analista);
+        $valores['cpf'] = $row_analista['cpf'];
         $valores['nome'] = $row_analista['nome'];
         $valores['data_nasc'] = $row_analista['data_nasc'];
         $valores['cep'] = $row_analista['cep'];
