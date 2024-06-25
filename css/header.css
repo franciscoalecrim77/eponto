@@ -93,13 +93,6 @@ footer{
     position: absolute;
 }
 
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-}
 body{
     background-color: #ecf0f1;
     
@@ -191,6 +184,7 @@ body h2{
 }
 
 .cadastroBasico{
+    /* background-color: red; */
    display: flex;
 }
 
@@ -211,7 +205,7 @@ fieldset {
  }
 
 .dadosBasicos1{
-    display: block;
+    display: inline-block;
     padding: 10px;
     margin-left: 550px;
     width: 420px;
@@ -286,7 +280,7 @@ fieldset {
     
     display: block;
     padding: 10px;
-    /* margin-left: 550px; */
+    margin-left: -500px;
     width: 420px;
     /* border: 10px solid #ccc; */
 }
@@ -308,6 +302,7 @@ fieldset {
 }
 
 .dadosEndereco2{   
+    margin-left: -500px;
     display: block;
     padding: 10px;
     width: 420px;
@@ -445,6 +440,20 @@ fieldset {
     margin-left: 138px;
     width: 200px;
     font-size: 15px;
+}
+
+.cadastrar{
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 45px;
+    margin-left: 470px;
+}
+
+.btn{
+border-radius: 5px;
+font-size: 15px;
+width: 100px;
+height: 30px;
 }
 
 footer{
