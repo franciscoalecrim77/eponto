@@ -11,6 +11,7 @@ function retorna($cpf, $mysqli){
 	p.cpf,
 	p.nome,
 	p.data_nasc,
+    p.ativo,
 	e.cep,
 	e.endereco,
 	e.numero,
@@ -29,6 +30,7 @@ inner join eponto.pessoas p on
         $valores['cpf'] = $row_analista['cpf'];
         $valores['nome'] = $row_analista['nome'];
         $valores['data_nasc'] = $row_analista['data_nasc'];
+        $valores['ativo'] = $row_analista['ativo'];
         $valores['cep'] = $row_analista['cep'];
         $valores['endereco'] = $row_analista['endereco'];
         $valores['numero'] = $row_analista['numero'];

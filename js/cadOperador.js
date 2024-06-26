@@ -14,9 +14,9 @@ $(document).ready(function(){
                 $('.btnCadOperador').val("Atualizar");
 
             }else{
-                $nome_analista.val('');
-                $nasc_analista.val('');
-                $cep.val('');
+                // $cpf.val('');
+                $email.val('');
+                $password.val('');
                 $(".btnCadOperador").val('Cadastrar');
             }
 
