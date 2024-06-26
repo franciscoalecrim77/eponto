@@ -52,35 +52,30 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 
 ?>
-<?php
 
-?>
-<div>
-    </div>
-    <h2>Cadastro de Empresas</h2>
+<h2>Cadastro de Empresas</h2>
     <section class="cadastroEmpresa">
         <form action="" method="post">
             <fieldset>
-            
-            <legend>Dados da Empresa</legend>
-        </fieldset>
-        <div class="dadosEmpresa">
-            <div class="divCnpj">
-                <label class="labelCnpj" for="cnpj">CNPJ:</label>
-                <input class="cnpjEmpresa" type="number" name="cnpj" id="cnpj">
+                <legend>Dados da Empresa</legend>
+            </fieldset>
+            <div class="dadosEmpresa">
+                <div class="divCnpj">
+                    <label class="labelCnpj" for="cnpj">CNPJ:</label>
+                    <input class="cnpjEmpresa" type="number" name="cnpj" id="cnpj">
+                </div>
+                <div class="divRazaoSocial">
+                    <label class="labelRazaoSocial" for="razaoSocial">Razao Social:</label>
+                    <input class="razaoSocial" type="text" name="razaoSocial" id="razaoSocial">
+                </div>
+                <div class="divNomeFantasia">
+                    <label class="labelNomeFantasia" for="cnpj">Nome Fantasia:</label>
+                    <input class="nomeFantasia" type="text" name="nomeFantasia" id="nomeFantasia">
+                </div>
+                <input class="btnCadEmpresa" type="submit" value="Cadastrar">
             </div>
-            <div class="divRazaoSocial">
-                <label class="labelRazaoSocial" for="razaoSocial">Razao Social:</label>
-                <input class="razaoSocial" type="text" name="razaoSocial" id="razaoSocial">
-            </div>
-            <div class="divNomeFantasia">
-                <label class="labelNomeFantasia" for="cnpj">Nome Fantasia:</label>
-                <input class="nomeFantasia" type="text" name="nomeFantasia" id="nomeFantasia">
-            </div>
-            <input class="btnCadEmpresa" type="submit" value="Cadastrar">
-        </div>
-    </form>
-</section>
+        </form>
+    </section>
 
 <?php
 include_once "./includes/footer.php";

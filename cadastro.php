@@ -4,6 +4,11 @@ require_once 'vendor/autoload.php';
 setlocale(LC_ALL, "pt_BR", "pt_BR.utf-8", "portuguese");
 date_default_timezone_set('America/Sao_Paulo');
 
+$consulta = new \app\Model\cadEmpresaDao;
+$empresas = $consulta->empresas();
+// echo "<pre>";
+// print_r($empresa) ;
+
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
 $resultado = null;
     
@@ -138,15 +143,16 @@ endforeach;
                             <input class="nome" type="text" name="nome" id="nome" required>
                         </div> 
                         <div class="divNASC">
-                            <label class="labelNASC" for="nasc"> Nascimento:</label>
+                            <label class="labelNASC" for="datanasc"> Nascimento:</label>
                             <input class="nasc" type="date" name="datanasc" id="datanasc" required>
                         </div>
                         <div class="divEMPRESA">
                             <label class="labelEMPRESA" for="selectEmpresa">Empresa:</label>
                             <select class="selectEmpresa" name="" id="selectEmpresa">
-                                <option class="valueEmpresa" value="">teste</option>
-                                <option class="valueEmpresa" value="">teste</option>
-                                <option class="valueEmpresa" value="">teste</option>
+                                <option value="" default>Selecione a empresa</option>
+                            <?php foreach($empresas as $empresa): ?>
+                                <option class="valueEmpresa" value="<?php echo $empresa['id']; ?>"><?php echo $empresa['fantasia']; ?></option>
+                            <?php endforeach; ?>
                             </select>
                         </div>
 
@@ -156,6 +162,7 @@ endforeach;
                         <div class="divATIVO">
                             <label class="labelAtivo" for="ativo">Usuario Ativo?</label>
                             <select class="ativo" name="ativo" id="ativo">
+                                <option value="" default></option>
                                 <option class="valueEmpresa" value="S">Sim</option>
                                 <option class="valueEmpresa" value="N">Não</option>
                             </select>
@@ -174,7 +181,7 @@ endforeach;
                             <input class="cep" type="text" id="cep" name="cep" onblur="pesquisacep(this.value)">
                         </div>
                         <div class="divENDERECO">
-                            <label class="labelENDERECO" for="endereco"> Endereço:</label>
+                            <label class="labelENDERECO" for="rua"> Endereço:</label>
                             <input class="endereco"type="text" name="rua" id="rua">
                         </div>
                         <div class="divNUMERO">
@@ -207,8 +214,7 @@ endforeach;
                     </div>
                 </div>
                 <div class="cadastrar"> 
-                    <label class="btnCADASTRO" for=""> </label>
-                        <input class="btn" type="submit" value="Cadastrar">
+                        <input class="btn" type="submit" name="btnCadastrar" value="Cadastrar">
                 </div> 
         </form>
     </section>

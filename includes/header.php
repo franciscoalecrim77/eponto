@@ -20,14 +20,18 @@ endforeach;
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerencial</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon-16x16.png">
     <link rel="stylesheet" href="css/header.css">
-    <!-- <link rel="stylesheet" href="css/cadastro.css"> -->
     <link rel="stylesheet" href="css/cadOperador.css">
     <link rel="stylesheet" href="css/aside.css">
+    <link rel="stylesheet" href="css/cadEmpresa.css">
+    <link rel="stylesheet" href="css/Setores.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
     <script src="js/cadastro.js"></script>
     <script src="/js/cadOperador.js"></script>
+    <script src="/js/empresa.js"></script>
     <script type="text/javascript" src="js/header.js"></script>
     <!-- <script type="text/javascript" src="/js/header.js"></script> -->
     <script type="text/javascript">
@@ -60,9 +64,10 @@ endforeach;
             <i class="fas fa-angle-right dropdown"></i>
             </a>
             <div class="sub-menu">
-                <a href="" class="sub-item">Categorias</a>
-                <a href="" class="sub-item">Empresa</a>
+                <!-- <a href="" class="sub-item">Categorias</a> -->
+                <a href="cadEmpresa.php" class="sub-item">Empresa</a>
                 <a href="cadOperador.php" class="sub-item">Operadores</a>
+                <a href="cadSetor.php" class="sub-item">Setores</a>   
                 <a href="cadastro.php" class="sub-item">Usuarios</a>
                 <!-- <a href="" class="sub-item">Chablau</a> -->
             </div>

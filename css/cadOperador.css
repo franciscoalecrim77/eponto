@@ -17,10 +17,6 @@ fieldset legend {
 
 .dadosOperador{
     margin-top: 10px;
-    display: flex;
-
- }
-.dadosOperador{
     display: inline-block;
     padding: 10px;
     margin-left: 550px;

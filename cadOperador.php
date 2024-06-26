@@ -92,29 +92,25 @@ $cadOperadorDao->pegaCpf($setaCpf);
 ?>
     <h2>Cadastro de Operadores</h2>
 <section class="cadastroOperador">
-
     <form action="" method="post">
-        
         <fieldset>
             <legend>Cadastro de Credenciais</legend>
         </fieldset>
         <div class="dadosOperador">
             <div class="divOperadorCPF">
                 <label class="labelOperadorCpf" for="cpf">Confirme o seu CPF:</label> 
-            <input class="operadorCpf" oninput="mascara(this)" type="text" name="cpfOperador" id="cpfOperador" required>
+                <input class="operadorCpf" oninput="mascara(this)" type="text" name="cpfOperador" id="cpfOperador" required>
+            </div>
+            <div class="divOperadorEmail">
+                <label class="labelOperadorEmail" for="email">Informe seu Email:</label>
+                <input class="operadorEmail" type="email" name="email" id="email" >
+            </div>
+            <div class="divOperadorPassword">
+                <label class="labelOperadorPassword" for="password">Informe sua senha:</label> 
+                <input class="operadorPassword" type="password" name="password" id="password" required>
+            </div>
+            <input class="btnCadOperador" type="submit" value="Cadastrar"> 
         </div>
-        <div class="divOperadorEmail">
-            <label class="labelOperadorEmail" for="email">Informe seu Email:</label>
-            <input class="operadorEmail" type="email" name="email" id="email" >
-        </div>
-        <div class="divOperadorPassword">
-            <label class="labelOperadorPassword" for="password">Informe sua senha:</label> 
-            <input class="operadorPassword" type="password" name="password" id="password" required>
-        </div>
-        
-        <input class="btnCadOperador" type="submit" value="Cadastrar">
-        
-    </div>
     </form>
 </section>
 
