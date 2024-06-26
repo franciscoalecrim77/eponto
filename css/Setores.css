@@ -1,0 +1,40 @@
+.dadosSetor{
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px;
+    margin-left: 550px;
+    width: 800px;
+}
+
+.divSetor{
+    margin-top: 10px;
+    display: block;
+    height: 30px;
+   
+}
+.labelSetor{
+    font-weight: 400;
+    font-size: 15px;
+    /* display: inline; */
+    font-size: 20px;
+}
+.selectSetor{
+    text-align: left;
+    margin-left: 5px;
+    font-size: 15px;
+    width: 300px;
+}
+
+.setor{
+    margin-left: 57px;
+    width: 300px;
+    font-size: 15px;
+}
+
+.btnCadSetor{
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 100px;
+    height: 30px;
+}
