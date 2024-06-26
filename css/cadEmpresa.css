@@ -1,0 +1,74 @@
+
+.dadosEmpresa{
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px;
+    margin-left: 550px;
+    width: 800px;
+}
+
+
+.divCnpj{
+    display: block;
+    height:35px;
+}
+
+.labelCnpj{
+    font-weight: 400;
+    display: inline;
+    /* width: 50px; */
+    font-size: 20px;
+}
+
+.cnpjEmpresa{
+    margin-left: 65px;
+    width: 200px;
+    font-size: 15px;
+}
+.divRazaoSocial{
+    /* background-color: blue; */
+    display: inline-block;
+    height:35px;
+    /* background-color: blue; */
+}
+
+.labelRazaoSocial{
+    font-weight: 400;
+    display: inline;
+    /* width: 50px; */
+    font-size: 20px;
+}
+
+.razaoSocial{
+    /* margin-left: 109px; */
+    width: 200px;
+    font-size: 15px;
+}
+.divNomeFantasia{
+    margin-left: 10px;
+    display: inline-block;
+    height:35px;
+    /* background-color: blue; */
+}
+
+.labelNomeFantasia{
+    font-weight: 400;
+    display: inline;
+    /* width: 50px; */
+    font-size: 20px;
+}
+
+.nomeFantasia{
+    /* margin-left: 109px; */
+    display: inline;
+    width: 200px;
+    font-size: 15px;
+}
+
+.btnCadEmpresa{
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 100px;
+    height: 30px;
+}
