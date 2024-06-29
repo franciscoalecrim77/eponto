@@ -6,13 +6,15 @@ namespace app\Model;
 class cadPessoasDao{
     
     public function create(CadPessoas $cd){
-        $sql = 'INSERT INTO pessoas (cpf, nome, data_nasc, ativo, categoria_id ) VALUES (?,?,?,?,?)';
+        $sql = 'INSERT INTO pessoas (cpf, nome, data_nasc, id_empresa, ativo, idcargos, categoria_id ) VALUES (?,?,?,?,?,?,?)';
         $stmt = Conn::getConn()->prepare($sql);       
         $stmt->bindValue(1, $cd->getCPF());
         $stmt->bindValue(2, $cd->getNome());
         $stmt->bindValue(3, $cd->getdataNasc());
-        $stmt->bindValue(4, $cd->getAtivo());
-        $stmt->bindValue(5, $cd->getCategoria());
+        $stmt->bindValue(4, $cd->getEmpresa());
+        $stmt->bindValue(5, $cd->getAtivo());
+        $stmt->bindValue(6, $cd->getCargo());
+        $stmt->bindValue(7, $cd->getCategoria());
         $stmt->execute();
      
             $consulta = 'SELECT * FROM pessoas where cpf =' . $cd->getcpf();
@@ -55,13 +57,15 @@ class cadPessoasDao{
    }
 
    public function update(CadPessoas $cd) {
-    $sql = 'UPDATE pessoas SET nome = ?, data_nasc = ?, ativo = ?, categoria_id = ? WHERE cpf = ?';
+    $sql = 'UPDATE pessoas SET nome = ?, data_nasc = ?, id_empresa = ?, ativo = ?, idcargos = ?, categoria_id = ? WHERE cpf = ?';
     $stmt = Conn::getConn()->prepare($sql);
     $stmt->bindValue(1, $cd->getNome());
     $stmt->bindValue(2, $cd->getdataNasc());
-    $stmt->bindValue(3, $cd->getAtivo());
-    $stmt->bindValue(4, $cd->getCategoria());
-    $stmt->bindValue(5, $cd->getCPF());
+    $stmt->bindValue(3, $cd->getEmpresa());
+    $stmt->bindValue(4, $cd->getAtivo());
+    $stmt->bindValue(5, $cd->getCargo());
+    $stmt->bindValue(6, $cd->getCategoria());
+    $stmt->bindValue(7, $cd->getCPF());
     $stmt->execute();
 }
 }

@@ -200,6 +200,14 @@ fieldset {
     display: inline-block;
 }
 
+.labelUsuarioCargo{
+    font-weight: 400;
+    display: inline;
+    /* width: 50px; */
+    font-size: 20px;
+}
+
+
 .cadastroEndereco{
     display: flex;
     

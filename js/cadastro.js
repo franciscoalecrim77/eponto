@@ -177,7 +177,9 @@ function mascara(i){
         
         var $nome_analista = $("input[name='nome']");
         var $nasc_analista = $("input[name='datanasc']");
+        var $empresa = $("#selectEmpresa");
         var $ativo = $("#ativo");
+        var $cargo = $("#usuarioCargo")
         var $cep = $("input[name='cep']");
         var $endereco = $("input[name='rua']");
         var $numero = $("input[name='numero']");
@@ -193,12 +195,13 @@ function mascara(i){
             if(json.cpf){
                 $nome_analista.val(json.nome);
                 $nasc_analista.val(json.data_nasc);
+                $empresa.val(json.id_empresa);
                 if (json.ativo === "S") {
                     $ativo.val('S');
                 } else {
                     $ativo.val('N');
                 }
-                // $ativo.val(json.ativo);
+                $cargo.val(json.idcargos);
                 $cep.val(json.cep);
                 $endereco.val(json.endereco);
                 $numero.val(json.numero);
@@ -212,7 +215,9 @@ function mascara(i){
             }else{
                 $nome_analista.val('');
                 $nasc_analista.val('');
+                $empresa.val('0');
                 $ativo.val('');
+                $cargo.val('0');
                 $cep.val('');
                 $endereco.val('');
                 $numero.val('');

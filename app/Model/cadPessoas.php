@@ -8,6 +8,8 @@ class CadPessoas{
     private $dataNasc;
     private $consulta;
     private $ativo;
+    private $empresa;
+    private $cargo;
     private $categoria;
 
     public function getId(){
@@ -38,12 +40,30 @@ class CadPessoas{
         $this->dataNasc = $dn;
     }
 
+    public function getEmpresa(){
+        return $this->empresa;
+    }
+
+    public function setEmpresa($em){
+        $this->empresa = $em;
+    }
+
+
+
     public function getAtivo(){
         return $this->ativo;
     }
 
     public function setAtivo($ativo){
         $this->ativo = $ativo;
+    }
+
+    public function getCargo(){
+        return $this->cargo;
+    }
+
+    public function setCargo($ca){
+        $this->cargo = $ca;
     }
 
     public function getCategoria(){

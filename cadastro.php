@@ -6,6 +6,8 @@ date_default_timezone_set('America/Sao_Paulo');
 
 $consulta = new \app\Model\cadEmpresaDao;
 $empresas = $consulta->empresas();
+$cargosCadastro = new \app\Model\cadCargoDao;
+$consultaCargo = $cargosCadastro->cargos();
 // echo "<pre>";
 // print_r($empresa) ;
 
@@ -15,7 +17,9 @@ $resultado = null;
 $nome =        (empty($_POST['nome']))? false : $_POST['nome'];
 $datanasc =    (empty($_POST['datanasc']))? false : $_POST['datanasc'];
 $cpf =         (empty($_POST['cpf']))? false : $_POST['cpf'];
+$empresa =     (empty($_POST['empresa']))? false : $_POST['empresa'];
 $ativo =       (empty($_POST['ativo']))? false : $_POST['ativo'];
+$cargoUsuario =(empty($_POST['usuarioCargo']))? false : $_POST['usuarioCargo'];
 $cep =         (empty($_POST['cep']))? false : $_POST['cep'];
 $rua =         (empty($_POST['rua']))? false : $_POST['rua'];
 $numero =      (empty($_POST['numero']))? false : $_POST['numero'];
@@ -45,10 +49,12 @@ endforeach;
     if($resultado > 1){
         $pessoa = new \app\model\cadPessoas();
         $pessoa->setNome($nome);
-        $pessoa->setdataNasc($datanasc);
         $pessoa->setCPF($cpfajustado);
+        $pessoa->setdataNasc($datanasc);
+        $pessoa->setEmpresa($empresa);
+        $pessoa->setAtivo($ativo);
+        $pessoa->setCargo($cargoUsuario);  
         $pessoa->setCategoria($categoria);
-        $pessoa->setAtivo($ativo);  
         $cadPessoasDao = new app\Model\cadPessoasDao();
         $cadPessoasDao->update($pessoa); // atualiza usuario no banco.
 
@@ -81,9 +87,13 @@ endforeach;
         $pessoa->setdataNasc($datanasc);
         $pessoa->setCPF($cpfajustado);
         $pessoa->setCategoria($categoria);
-        $pessoa->setAtivo($ativo);        
+        $pessoa->setEmpresa($empresa);
+        $pessoa->setAtivo($ativo);
+        $pessoa->setCargo($cargoUsuario);      
         $cadPessoasDao = new app\Model\cadPessoasDao();
         $cadPessoasDao->create($pessoa); // Insere usuario no banco.
+        // var_dump($pessoa);
+        // exit;
 
         
         $id_pessoa_consulta = new \app\model\cadPessoasDao(); 
@@ -147,9 +157,9 @@ endforeach;
                             <input class="nasc" type="date" name="datanasc" id="datanasc" required>
                         </div>
                         <div class="divEMPRESA">
-                            <label class="labelEMPRESA" for="selectEmpresa">Empresa:</label>
-                            <select class="selectEmpresa" name="" id="selectEmpresa">
-                                <option value="" default>Selecione a empresa</option>
+                            <label class="labelEMPRESA" for="empresa">Empresa:</label>
+                            <select class="selectEmpresa" name="empresa" id="selectEmpresa">
+                                <option value="0" default>Selecione a empresa</option>
                             <?php foreach($empresas as $empresa): ?>
                                 <option class="valueEmpresa" value="<?php echo $empresa['id']; ?>"><?php echo $empresa['fantasia']; ?></option>
                             <?php endforeach; ?>
@@ -165,8 +175,16 @@ endforeach;
                                 <option value="" default></option>
                                 <option class="valueEmpresa" value="S">Sim</option>
                                 <option class="valueEmpresa" value="N">Não</option>
-                            </select>
-                           
+                            </select> 
+                        </div>
+                        <div class="divUsuarioCargo">
+                            <label class="labelUsuarioCargo" for="usuarioCargo">Cargo: </label>
+                            <select class="selectUsuarioCargo" name="usuarioCargo" id="usuarioCargo">
+                                <option value="0" default>Selecione o Cargo</option>
+                                    <?php foreach ($consultaCargo as  $cargo):?>
+                                    <option value="<?php echo $cargo['idcargos'];?>"><?php echo $cargo['cargo'];?></option>
+                                    <?php endforeach; ?>    
+                            </select> 
                         </div>
                     </div>
             </div>
