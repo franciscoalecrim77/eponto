@@ -7,25 +7,27 @@ setlocale(LC_ALL, "pt_BR", "pt_BR.utf-8", "portuguese");
 date_default_timezone_set('America/Sao_Paulo');
 
 function retorna($cpf, $mysqli){
-    $result_analista = "select
-	p.cpf,
-	p.nome,
-	p.data_nasc,
+    $result_analista = "SELECT
+    p.cpf,
+    p.nome,
+    p.data_nasc,
     p.id_empresa,
     p.ativo,
     p.idcargos,
-	e.cep,
-	e.endereco,
-	e.numero,
-	e.complemento,
-	e.bairro,
-	e.cidade,
-	e.estado,
+    e.cep,
+    e.endereco,
+    e.numero,
+    e.complemento,
+    e.bairro,
+    e.cidade,
+    e.estado,
     e.uf
-from
-	enderecos e 
-inner join pessoas p on
-	p.cpf = '$cpf'";
+FROM
+    enderecos e
+INNER JOIN
+    pessoas p ON p.id = e.pessoa_id 
+WHERE
+    p.cpf = '$cpf'";
     $resultado_analista = mysqli_query($mysqli, $result_analista);
     if($resultado_analista->num_rows > 0){
         $row_analista = mysqli_fetch_array($resultado_analista);
