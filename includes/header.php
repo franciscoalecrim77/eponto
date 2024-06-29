@@ -48,8 +48,8 @@ endforeach;
         <h1 class="titulo">Sistema Gerenciador de Ponto Eletronico </h1>
         <div class="sessao">
             <div class="usuarioLogado">Usuario Logado: <?php echo $validado['nome']?></div>
-            <div class="empresa">Empresa: Dados da Empresa Aqui</div>
-            <div class="cnpj">CNPJ: 62753042000150</div>
+            <div class="empresa">Empresa: <?php echo $validado['fantasia'];?></div>
+            <div class="cnpj">CNPJ: <?php echo $validado['cnpj'];?></div>
             <div class="dataHora"><output id="hora" class="hora"></output> - <output id="data" class="data"></output></div>
             <button class="registro" action="registro.php"><a href="registro.php">Registrar</a></button>
         </div>
@@ -57,7 +57,7 @@ endforeach;
     <div class="aside-bar">
     <div class="headerAside-Bar">
         <div class="usuario"><?php echo $validado['nome']?></div>
-        <div class="cargo">Cargo: Analista de suporte</div>
+        <div class="cargo">Cargo: <?php echo $validado['cargo'];?></div>
         <div class="banco">Total de banco: 02:00h</div>
     </div>
     <div class="menu">
