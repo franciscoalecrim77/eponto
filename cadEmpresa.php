@@ -17,9 +17,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $razaoSocial =  (empty($_POST['razaoSocial']))? false : $_POST['razaoSocial'];
     $nomeFantasia = (empty($_POST['nomeFantasia']))? false : $_POST['nomeFantasia'];
 
-    $consulta = new \app\model\cadEmpresa();
+    $consulta = new \App\Model\cadEmpresa();
     $consulta->setCnpj($cnpj);
-    $cadEmpresaDao = new \app\model\cadEmpresaDao();
+    $cadEmpresaDao = new \App\Model\cadEmpresaDao();
     $cadEmpresaDao->pegaCnpj($consulta);
     foreach ($cadEmpresaDao->pegaCnpj($consulta) as $resultado) {
         $res = $resultado;
@@ -27,20 +27,20 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     }
 
     if($resultado > 1){
-    $empresa = new \app\model\cadEmpresa();
+    $empresa = new \App\Model\cadEmpresa();
     $empresa->setCnpj($cnpj);
     $empresa->setRazaoSocial($razaoSocial);
     $empresa->setNomeFantasia($nomeFantasia);
 
-    $insereEmpresa = new \app\model\cadEmpresaDao();
+    $insereEmpresa = new \App\Model\cadEmpresaDao();
     $insereEmpresa->update($empresa);
     echo"<script>alert('Dados de Empresa atualizado com sucesso!')</script>";
     }else if(!empty($cnpj) && ($razaoSocial) && ($nomeFantasia) && $resultado == ''){
-        $empresa = new \app\model\cadEmpresa();
+        $empresa = new \App\Model\cadEmpresa();
         $empresa->setCnpj($cnpj);
         $empresa->setRazaoSocial($razaoSocial);
         $empresa->setNomeFantasia($nomeFantasia);
-        $insereEmpresa = new \app\model\cadEmpresaDao();
+        $insereEmpresa = new \App\Model\cadEmpresaDao();
         $insereEmpresa->create($empresa);
         echo"<script>alert('Empresa cadastrado com sucesso!')</script>";
     }

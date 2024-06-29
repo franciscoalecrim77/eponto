@@ -10,8 +10,7 @@ function consultaOperador($cpf,$mysqli){
             $result_operador = "SELECT
             pessoa_id,
             cpf,
-            email,
-            senha
+            email
         FROM
             eponto.usuarios
         where
@@ -22,7 +21,7 @@ function consultaOperador($cpf,$mysqli){
         $valoresOperador['pessoa_id'] = $row_operador['pessoa_id'];
         $valoresOperador['cpf'] = $row_operador['cpf'];
         $valoresOperador['email'] = $row_operador['email'];
-        $valoresOperador['senha'] = $row_operador['senha'];
+        // $valoresOperador['senha'] = $row_operador['senha'];
     }else{
         $valoresOperador['cpf'] = '';
     }

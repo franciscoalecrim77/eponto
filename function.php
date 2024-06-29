@@ -23,8 +23,8 @@ function retorna($cpf, $mysqli){
 	e.estado,
     e.uf
 from
-	eponto.enderecos e 
-inner join eponto.pessoas p on
+	enderecos e 
+inner join pessoas p on
 	p.cpf = '$cpf'";
     $resultado_analista = mysqli_query($mysqli, $result_analista);
     if($resultado_analista->num_rows > 0){

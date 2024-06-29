@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Model;
+namespace App\Model;
 class cadEnderecos{
     private $pessoa_id;
     private $cep;

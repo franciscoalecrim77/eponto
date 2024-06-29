@@ -1,6 +1,6 @@
 <?php 
 
-namespace app\Model;
+namespace App\Model;
 
 class validaLogin{
     private $email;

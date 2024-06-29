@@ -13,10 +13,10 @@ $validado = NULL;
 $email =    (empty($_POST['email']))? false : $_POST['email'];
 $password = (empty($_POST['password']))? false : $_POST['password'];
 
-$credenciais = new \app\model\validaLogin();
+$credenciais = new \App\Model\validaLogin();
 $credenciais->setEmail($email);
 $credenciais->setPassword(base64_encode($password));
-$validaLoginDao = new \app\model\validaLoginDao();
+$validaLoginDao = new \App\Model\validaLoginDao();
 $validaLoginDao->validaLogin($credenciais);
 foreach($validaLoginDao->validaLogin($credenciais) as $validado):
 //   var_dump($validado);

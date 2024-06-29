@@ -3,14 +3,15 @@ include('protect.php');
 $usuarioLogado = intval($_SESSION['id']);
 
 require_once 'vendor/autoload.php';
-$operadorLogado = new \app\model\usuarioLogado();
+$operadorLogado = new \App\Model\usuarioLogado();
 $operadorLogado->setIdUsuario($usuarioLogado);
 // $operadorLogadoDao = new \app\model\usuarioLogadoDao();
-$usuarioLogado = new \app\model\usuarioLogadoDao();
+$usuarioLogado = new \App\Model\usuarioLogadoDao();
 $usuarioLogado->usuarioLogado($operadorLogado);
 foreach($usuarioLogado->usuarioLogado($operadorLogado) as $validado):
-  //print_r($validado);
+//   print_r($validado);
 endforeach;
+
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +21,7 @@ endforeach;
     <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerencial</title>
-    <link rel="icon" type="image/x-icon" href="/img/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="/img/seu-logo-aqui-1.png">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/cadOperador.css">
     <link rel="stylesheet" href="css/aside.css">

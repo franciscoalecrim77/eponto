@@ -7,21 +7,40 @@ namespace Composer\Autoload;
 class ComposerStaticInita0eddc63b906bacbeb67c6c6e136c1df
 {
     public static $prefixLengthsPsr4 = array (
-        'a' => 
+        'A' => 
         array (
-            'app\\' => 4,
+            'App\\' => 4,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'app\\' => 
+        'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
     );
 
     public static $classMap = array (
-        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'App\\Model\\CadPessoas' => __DIR__ . '/../..' . '/app/Model/cadPessoas.php',
+        'App\\Model\\Conn' => __DIR__ . '/../..' . '/app/Model/conn.php',
+        'App\\Model\\cadCargo' => __DIR__ . '/../..' . '/app/Model/cadCargo.php',
+        'App\\Model\\cadCargoDao' => __DIR__ . '/../..' . '/app/Model/cadCargoDao.php',
+        'App\\Model\\cadCategoria' => __DIR__ . '/../..' . '/app/Model/cadCategoria.php',
+        'App\\Model\\cadEmpresa' => __DIR__ . '/../..' . '/app/Model/cadEmpresa.php',
+        'App\\Model\\cadEmpresaDao' => __DIR__ . '/../..' . '/app/Model/cadEmpresaDao.php',
+        'App\\Model\\cadEnderecos' => __DIR__ . '/../..' . '/app/Model/cadEnderecos.php',
+        'App\\Model\\cadEnderecosDao' => __DIR__ . '/../..' . '/app/Model/cadEnderecosDao.php',
+        'App\\Model\\cadPessoasDao' => __DIR__ . '/../..' . '/app/Model/cadPessoasDao.php',
+        'App\\Model\\cadSetor' => __DIR__ . '/../..' . '/app/Model/cadSetor.php',
+        'App\\Model\\cadSetorDao' => __DIR__ . '/../..' . '/app/Model/cadSetorDao.php',
+        'App\\Model\\cadUsuario' => __DIR__ . '/../..' . '/app/Model/cadUsuario.php',
+        'App\\Model\\cadUsuarioDao' => __DIR__ . '/../..' . '/app/Model/cadUsuarioDao.php',
+        'App\\Model\\insereRegistro' => __DIR__ . '/../..' . '/app/Model/insereRegistro.php',
+        'App\\Model\\insereRegistroDao' => __DIR__ . '/../..' . '/app/Model/insereRegistroDao.php',
+        'App\\Model\\usuarioLogado' => __DIR__ . '/../..' . '/app/Model/usuarioLogado.php',
+        'App\\Model\\usuarioLogadoDao' => __DIR__ . '/../..' . '/app/Model/usuarioLogadoDao.php',
+        'App\\Model\\validaLogin' => __DIR__ . '/../..' . '/app/Model/validaLogin.php',
+        'App\\Model\\validaLoginDao' => __DIR__ . '/../..' . '/app/Model/validaLoginDao.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

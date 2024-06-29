@@ -17,11 +17,11 @@ $cpfajuste = preg_replace('/[^0-9]/', '',$cpf);
 $cpfajustado = intval($cpfajuste);
 
 
-$informacpf = new \app\model\cadUsuario();
+$informacpf = new \App\Model\cadUsuario();
 $informacpf->setCpf($cpfajustado);
 // $informacpf->setPessoaId($id);
 // var_dump($informacpf);
-$cadOperadorDao = new \app\model\cadUsuarioDao(); 
+$cadOperadorDao = new \App\Model\cadUsuarioDao(); 
 $cadOperadorDao->pegainfo($informacpf);
       foreach($cadOperadorDao->pegaInfo($informacpf) as $id):
     //    var_dump($id);
@@ -34,9 +34,9 @@ $cadOperadorDao->pegainfo($informacpf);
 
     }
 
-$setaCpf = new \app\model\cadUsuario();
+$setaCpf = new \App\model\cadUsuario();
 $setaCpf->setCpf($cpfajustado);
-$cadOperadorDao = new \app\model\cadUsuarioDao(); 
+$cadOperadorDao = new \App\Model\cadUsuarioDao(); 
 $cadOperadorDao->pegaCpf($setaCpf);
       foreach($cadOperadorDao->pegaCpf($setaCpf) as $cpfrecolhido):
     //   var_dump($cpfrecolhido);
@@ -50,13 +50,13 @@ $cadOperadorDao->pegaCpf($setaCpf);
             
         
       }else if($cpfrecolhido > 1){
-        $operador = new \app\model\cadUsuario();
+        $operador = new \App\Model\cadUsuario();
         $operador->SetPessoaId($idUsuario);
         $operador->setCpf($cpfajustado);
         $operador->setEmail($email);
         $operador->setPassword($criptografada);
         $operador->setAtivo("S");
-        $cadUsuarioDao = new app\Model\cadUsuarioDao();
+        $cadUsuarioDao = new \App\Model\cadUsuarioDao();
         $cadUsuarioDao->update($operador);
         // echo "<pre>";
         // print_r($operador);
@@ -65,13 +65,13 @@ $cadOperadorDao->pegaCpf($setaCpf);
       }
         else if((!empty($cpfajustado) && ($email) && ($password)) && $cpfrecolhido == ''){
 
-            $operador = new \app\model\cadUsuario();
+            $operador = new \App\Model\cadUsuario();
             $operador->SetPessoaId($idUsuario);
             $operador->setCpf($cpfajustado);
             $operador->setEmail($email);
             $operador->setPassword($criptografada);
             $operador->setAtivo("S");
-            $cadUsuarioDao = new app\Model\cadUsuarioDao();
+            $cadUsuarioDao = new \App\Model\cadUsuarioDao();
             $cadUsuarioDao->create($operador);
             // echo "<pre>";
             // print_r($operador);

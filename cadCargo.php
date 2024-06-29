@@ -5,10 +5,10 @@ require_once 'vendor/autoload.php';
 setlocale(LC_ALL, "pt_BR", "pt_BR.utf-8", "portuguese");
 date_default_timezone_set('America/Sao_Paulo');
 
-$setoresCadastro = new \app\Model\cadSetorDao;
+$setoresCadastro = new \App\Model\cadSetorDao;
 $consulta = $setoresCadastro->consulta();
 
-$cargosCadastro = new \app\Model\cadCargoDao;
+$cargosCadastro = new \App\Model\cadCargoDao;
 $consultaCargo = $cargosCadastro->cargos();
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
@@ -17,13 +17,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     $setor = (empty($_POST['setorSelect']))?false:$_POST['setorSelect'];
 
     if(!empty($cargo) && $setor){
-        $pegaCargo = new \app\Model\cadCargo;
+        $pegaCargo = new \App\Model\cadCargo;
         $pegaCargo->setCargo($cargo);
         $pegaCargo->setSetorId(($setor));
-        $insereCargo = new \app\Model\cadCargoDao;
+        $insereCargo = new \App\Model\cadCargoDao;
         $insereCargo->create($pegaCargo);
         echo'<script>alert("Cadastro realizado com sucesso")</script>';
-        $cargosCadastro = new \app\Model\cadCargoDao;
+        $cargosCadastro = new \App\Model\cadCargoDao;
         $consultaCargo = $cargosCadastro->cargos();
     }
 

@@ -5,7 +5,7 @@ require_once 'vendor/autoload.php';
 setlocale(LC_ALL, "pt_BR", "pt_BR.utf-8", "portuguese");
 date_default_timezone_set('America/Sao_Paulo');
 
-$setoresCadastro = new \app\Model\cadSetorDao;
+$setoresCadastro = new \App\Model\cadSetorDao;
 $consulta = $setoresCadastro->consulta();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -13,11 +13,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     if(!empty($setor)){
 
-        $setorCadastro = new \app\Model\cadSetor;
+        $setorCadastro = new \App\Model\cadSetor;
         $setorCadastro->setSetor($setor);
-        $insert = new \app\Model\cadSetorDao;
+        $insert = new \App\Model\cadSetorDao;
         $insert->create($setorCadastro);
-        $setoresCadastro = new \app\Model\cadSetorDao;
+        $setoresCadastro = new \App\Model\cadSetorDao;
         $consulta = $setoresCadastro->consulta();
         echo"<script>alert('Setor Cadastrado com sucesso!')</script>";
     }else{

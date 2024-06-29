@@ -2,7 +2,7 @@
 
 
 
-namespace app\Model;
+namespace App\Model;
 
 class insereRegistroDao{
 

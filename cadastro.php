@@ -4,9 +4,9 @@ require_once 'vendor/autoload.php';
 setlocale(LC_ALL, "pt_BR", "pt_BR.utf-8", "portuguese");
 date_default_timezone_set('America/Sao_Paulo');
 
-$consulta = new \app\Model\cadEmpresaDao;
+$consulta =new \App\Model\cadEmpresaDao;
 $empresas = $consulta->empresas();
-$cargosCadastro = new \app\Model\cadCargoDao;
+$cargosCadastro = new \App\Model\cadCargoDao;
 $consultaCargo = $cargosCadastro->cargos();
 // echo "<pre>";
 // print_r($empresa) ;
@@ -33,9 +33,9 @@ $categoria = 1;
 $cpfajuste = preg_replace('/[^0-9]/', '',$cpf);
 $cpfajustado = intval($cpfajuste);
 
-$informacpf = new \app\model\CadPessoas();
+$informacpf = new \App\Model\CadPessoas();
 $informacpf->setcpf($cpfajustado);
-$cadPessoasDao = new \app\model\cadPessoasDao(); 
+$cadPessoasDao = new \App\Model\cadPessoasDao(); 
 $cadPessoasDao->Validar($informacpf);
 
 foreach($cadPessoasDao->Validar($informacpf) as $resultado):
@@ -47,7 +47,7 @@ endforeach;
     //     $consulta->setNome($resultado['nome']);
     // }
     if($resultado > 1){
-        $pessoa = new \app\model\cadPessoas();
+        $pessoa = new \App\Model\cadPessoas();
         $pessoa->setNome($nome);
         $pessoa->setCPF($cpfajustado);
         $pessoa->setdataNasc($datanasc);
@@ -55,16 +55,16 @@ endforeach;
         $pessoa->setAtivo($ativo);
         $pessoa->setCargo($cargoUsuario);  
         $pessoa->setCategoria($categoria);
-        $cadPessoasDao = new app\Model\cadPessoasDao();
+        $cadPessoasDao = new \App\Model\cadPessoasDao();
         $cadPessoasDao->update($pessoa); // atualiza usuario no banco.
 
-        $id_pessoa_consulta = new \app\model\cadPessoasDao(); 
+        $id_pessoa_consulta = new \App\Model\cadPessoasDao(); 
         $id_pessoa_consulta->pegaId($informacpf);
         foreach($id_pessoa_consulta->pegaId($informacpf) as $id_novo):
             $id_tratado = $id_novo['id'];
             // var_dump($id_tratado);
         endforeach;
-        $enderecoPessoa = new \app\model\cadEnderecos();
+        $enderecoPessoa = new \App\Model\cadEnderecos();
         $enderecoPessoa->setPessoaId($id_tratado);
         $enderecoPessoa->setCep($cep);
         $enderecoPessoa->setEndereco($rua);
@@ -74,7 +74,7 @@ endforeach;
         $enderecoPessoa->setCidade($cidade);
         $enderecoPessoa->setEstado($estado);
         $enderecoPessoa->setUf($uf);
-        $enderecoPessoacadastro = new \app\model\cadEnderecosDao();
+        $enderecoPessoacadastro = new \App\Model\cadEnderecosDao();
         $enderecoPessoacadastro->updateEndereco($enderecoPessoa);
 
         echo "<script>alert('Cadastro Atualizado com sucesso!')</script>";
@@ -82,7 +82,7 @@ endforeach;
 
     }else if((!empty($nome) && ($datanasc) && ($cpfajustado)) && $resultado == ''){
 
-        $pessoa = new \app\model\cadPessoas();
+        $pessoa = new \App\Model\cadPessoas();
         $pessoa->setNome($nome);
         $pessoa->setdataNasc($datanasc);
         $pessoa->setCPF($cpfajustado);
@@ -90,13 +90,13 @@ endforeach;
         $pessoa->setEmpresa($empresa);
         $pessoa->setAtivo($ativo);
         $pessoa->setCargo($cargoUsuario);      
-        $cadPessoasDao = new app\Model\cadPessoasDao();
+        $cadPessoasDao = new \App\Model\cadPessoasDao();
         $cadPessoasDao->create($pessoa); // Insere usuario no banco.
         // var_dump($pessoa);
         // exit;
 
         
-        $id_pessoa_consulta = new \app\model\cadPessoasDao(); 
+        $id_pessoa_consulta = new \App\Model\cadPessoasDao(); 
         $id_pessoa_consulta->pegaId($informacpf);
 
         foreach($id_pessoa_consulta->pegaId($informacpf) as $id_novo):
@@ -105,7 +105,7 @@ endforeach;
         endforeach;
 
 
-        $enderecoPessoa = new \app\model\cadEnderecos();
+        $enderecoPessoa = new \App\Model\cadEnderecos();
         $enderecoPessoa->setPessoaId($id_tratado);
         $enderecoPessoa->setCep($cep);
         $enderecoPessoa->setEndereco($rua);
@@ -116,7 +116,7 @@ endforeach;
         $enderecoPessoa->setEstado($estado);
         $enderecoPessoa->setUf($uf);
 
-        $enderecoPessoacadastro = new \app\model\cadEnderecosDao();
+        $enderecoPessoacadastro = new \App\Model\cadEnderecosDao();
         $enderecoPessoacadastro->createEndereco($enderecoPessoa);
 
         echo "<script>alert('Cadastro realizado com sucesso!')</script>";

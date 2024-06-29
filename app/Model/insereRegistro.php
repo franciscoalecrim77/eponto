@@ -1,6 +1,5 @@
 <?php
-namespace app\Model;
-
+namespace App\Model;
 class insereRegistro{
     private $usuarioLogado;
     private $data;

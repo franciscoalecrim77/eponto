@@ -1,6 +1,6 @@
 <?php
 //include 'library/db.php';
-include __DIR__.'/includes/headerEcletica.php';
+include __DIR__.'/includes/header.php';
 setlocale(LC_ALL, "pt_BR", "pt_BR.utf-8", "portuguese");
 
 
