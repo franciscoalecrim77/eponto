@@ -54,7 +54,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
     <section class="area-login">
         <div class="login">
             <div>
-                <img src="img/logo.png" alt="">
+                <img src="img/seu-logo-aqui-1.png" alt="">
             </div>
         
 

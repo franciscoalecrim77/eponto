@@ -12,10 +12,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     $setor = (empty($_POST['setor']))? false : $_POST['setor'];
 
     if(!empty($setor)){
+
         $setorCadastro = new \app\Model\cadSetor;
         $setorCadastro->setSetor($setor);
         $insert = new \app\Model\cadSetorDao;
         $insert->create($setorCadastro);
+        $setoresCadastro = new \app\Model\cadSetorDao;
+        $consulta = $setoresCadastro->consulta();
         echo"<script>alert('Setor Cadastrado com sucesso!')</script>";
     }else{
         echo"<script>alert('Informe o nome do setor!')</script>";

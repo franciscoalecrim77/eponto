@@ -13,7 +13,7 @@
     <div class="navbar">
         <div class="container">
             <div class="logo">
-                    <a href="index.php"><img src="img/ecletica.png" alt=""></a>
+                    <a href="index.php"><img src="/img/seu-logo-aqui-1.png" alt=""></a>
             </div>
             <nav class="home">
                 

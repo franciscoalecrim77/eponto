@@ -26,6 +26,7 @@ endforeach;
     <link rel="stylesheet" href="css/aside.css">
     <link rel="stylesheet" href="css/cadEmpresa.css">
     <link rel="stylesheet" href="css/Setores.css">
+    <link rel="stylesheet" href="css/cargos.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
@@ -43,12 +44,12 @@ endforeach;
 </head>
 <body>
     <header class="header">
-        <a href="gerencial.php"><img src="/img/ecletica.jpg" alt=""></a>
+        <a href="gerencial.php"><img src="/img/seu-logo-aqui-1.png" alt=""></a>
         <h1 class="titulo">Sistema Gerenciador de Ponto Eletronico </h1>
         <div class="sessao">
             <div class="usuarioLogado">Usuario Logado: <?php echo $validado['nome']?></div>
-            <div class="empresa">Empresa: Prestsoft soluções em informatica</div>
-            <div class="cnpj">CNPJ: 02143500000108</div>
+            <div class="empresa">Empresa: Dados da Empresa Aqui</div>
+            <div class="cnpj">CNPJ: 62753042000150</div>
             <div class="dataHora"><output id="hora" class="hora"></output> - <output id="data" class="data"></output></div>
             <button class="registro" action="registro.php"><a href="registro.php">Registrar</a></button>
         </div>
@@ -65,6 +66,7 @@ endforeach;
             </a>
             <div class="sub-menu">
                 <!-- <a href="" class="sub-item">Categorias</a> -->
+                <a href="cadCargo.php" class="sub-item">Cargos</a>
                 <a href="cadEmpresa.php" class="sub-item">Empresa</a>
                 <a href="cadOperador.php" class="sub-item">Operadores</a>
                 <a href="cadSetor.php" class="sub-item">Setores</a>   
