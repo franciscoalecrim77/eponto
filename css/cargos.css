@@ -1,0 +1,59 @@
+.dadosCargo{
+    margin-top: 10px;
+    display: inline-block;
+    padding: 10px;
+    margin-left: 550px;
+    width: 800px;
+}
+
+.divCargo{
+    margin-top: 20px;
+    display: inline-block;
+    height: 30px;
+   
+}
+
+.setores{
+    margin-left: 15px;
+    display: inline-block;
+}
+
+.labelCargoSelect{
+    font-weight: 400;
+    font-size: 20px;
+}
+.labelCargo  {
+    font-weight: 400;
+    font-size: 20px;
+
+}
+.labelSetorSelect{
+    font-weight: 400;
+    font-size: 20px;
+
+}
+.selectCargo{
+    align-items: center;
+    text-align: left;
+    margin-left: 10px;
+    font-size: 15px;
+    width: 500px;
+}
+
+.cargo{
+    margin-left: 15px;
+    width: 200px;
+    font-size: 15px;
+}
+
+.setorSelect{
+    width: 200px;
+}
+
+.btnCadCargo{
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 100px;
+    height: 30px;
+}
