@@ -12,7 +12,7 @@ function consultaOperador($cpf,$mysqli){
             cpf,
             email
         FROM
-            eponto.usuarios
+            usuarios
         where
             cpf = '$cpf'";
     $resultado_operador = mysqli_query($mysqli, $result_operador);

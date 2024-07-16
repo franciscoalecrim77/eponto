@@ -1,4 +1,7 @@
 <?php
+
+use App\Model\cadPessoasDao;
+
 include __DIR__.'/includes/header.php';
 require_once 'vendor/autoload.php';
 setlocale(LC_ALL, "pt_BR", "pt_BR.utf-8", "portuguese");
@@ -8,8 +11,10 @@ $consulta =new \App\Model\cadEmpresaDao;
 $empresas = $consulta->empresas();
 $cargosCadastro = new \App\Model\cadCargoDao;
 $consultaCargo = $cargosCadastro->cargos();
-// echo "<pre>";
-// print_r($empresa) ;
+$categoriaCadastrada = new cadPessoasDao;
+$buscaCategoria = $categoriaCadastrada->categoria();
+$retornaUsuarios = new cadPessoasDao;
+$retornoUsuarios = $retornaUsuarios->consultaCompleta();
 
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
 $resultado = null;
@@ -20,6 +25,7 @@ $cpf =         (empty($_POST['cpf']))? false : $_POST['cpf'];
 $empresa =     (empty($_POST['empresa']))? false : $_POST['empresa'];
 $ativo =       (empty($_POST['ativo']))? false : $_POST['ativo'];
 $cargoUsuario =(empty($_POST['usuarioCargo']))? false : $_POST['usuarioCargo'];
+$categoriaUsuario =(empty($_POST['usuarioCategoria']))? false : $_POST['usuarioCategoria'];
 $cep =         (empty($_POST['cep']))? false : $_POST['cep'];
 $rua =         (empty($_POST['rua']))? false : $_POST['rua'];
 $numero =      (empty($_POST['numero']))? false : $_POST['numero'];
@@ -29,7 +35,6 @@ $cidade =      (empty($_POST['cidade']))? false : $_POST['cidade'];
 $estado =      (empty($_POST['estado']))? false : $_POST['estado'];
 $uf =          (empty($_POST['uf']))? false : $_POST['uf'];
 
-$categoria = 1;
 $cpfajuste = preg_replace('/[^0-9]/', '',$cpf);
 $cpfajustado = intval($cpfajuste);
 
@@ -54,7 +59,7 @@ endforeach;
         $pessoa->setEmpresa($empresa);
         $pessoa->setAtivo($ativo);
         $pessoa->setCargo($cargoUsuario);  
-        $pessoa->setCategoria($categoria);
+        $pessoa->setCategoria($categoriaUsuario);
         $cadPessoasDao = new \App\Model\cadPessoasDao();
         $cadPessoasDao->update($pessoa); // atualiza usuario no banco.
 
@@ -86,7 +91,7 @@ endforeach;
         $pessoa->setNome($nome);
         $pessoa->setdataNasc($datanasc);
         $pessoa->setCPF($cpfajustado);
-        $pessoa->setCategoria($categoria);
+        $pessoa->setCategoria($categoriaUsuario);
         $pessoa->setEmpresa($empresa);
         $pessoa->setAtivo($ativo);
         $pessoa->setCargo($cargoUsuario);      
@@ -136,6 +141,33 @@ endforeach;
     
     <section class="cadastro">
         <form class ="formulario" action="" method="POST" >
+
+        <div class="usuariosCadastrados">
+                    <Label class="labelUsuarioSelect" for="UsuarioSelect">Usuarios Cadastrados: </Label>
+                    <select class="UsuarioSelect" name="UsuarioSelect" id="UsuarioSelect">
+                        <option value="0" default>Selecione um Usuario Cadastrado</option>
+                    <?php foreach($retornoUsuarios as $usuarios): ?>
+                        
+                        <option class="valueUsuarios" value="<?php echo $usuarios['id'];?>"
+                        data-cpf="<?php echo $usuarios['cpf'];?>"
+                        data-nome="<?php echo $usuarios['nome'];?>"
+                        data-datanasc="<?php echo $usuarios['data_nasc'];?>"
+                        data-empresa="<?php echo $usuarios['id_empresa'];?>"
+                        data-ativo="<?php echo $usuarios['ativo'];?>"
+                        data-cargo="<?php echo $usuarios['idcargos'];?>"
+                        data-categoria="<?php echo $usuarios['categoria_id'];?>"
+                        data-cep="<?php echo $usuarios['cep'];?>"
+                        data-rua="<?php echo $usuarios['endereco'];?>"
+                        data-numero="<?php echo $usuarios['numero'];?>"
+                        data-complemento="<?php echo $usuarios['complemento'];?>"
+                        data-bairro="<?php echo $usuarios['bairro'];?>"
+                        data-cidade="<?php echo $usuarios['cidade'];?>"
+                        data-estado="<?php echo $usuarios['estado'];?>"
+                        data-uf="<?php echo $usuarios['uf'];?>">
+                        <?php echo $usuarios['nome']?></option>
+                    <?php endforeach; ?>
+                    </select>
+        </div>
     
             <fieldset class="caixaBasico">
                 <legend>Dados Básicos</legend>
@@ -186,6 +218,15 @@ endforeach;
                                     <?php endforeach; ?>    
                             </select> 
                         </div>
+                        <div class="divUsuarioCategoria">
+                            <label class="labelUsuarioCategoria" for="usuarioCategoria">Categoria:  </label>
+                            <select class="selectUsuarioCategoria" name="usuarioCategoria" id="usuarioCategoria">
+                                <option value="0" default>Selecione a Categoria</option>
+                                    <?php foreach ($buscaCategoria as  $categoria):?>
+                                    <option value="<?php echo $categoria['id'];?>"><?php echo $categoria['categoria'];?></option>
+                                    <?php endforeach; ?>    
+                            </select> 
+                        </div>
                     </div>
             </div>
                 <fieldset class="caixaEndereco">
@@ -231,8 +272,11 @@ endforeach;
                         </div>
                     </div>
                 </div>
+                <div class="novo"> 
+                    <input class="btnNovo" type="reset" name="btnCadastrar" value="Novo Registro">
+                </div> 
                 <div class="cadastrar"> 
-                        <input class="btn" type="submit" name="btnCadastrar" value="Cadastrar">
+                    <input class="btn" type="submit" name="btnCadastrar" value="Cadastrar">
                 </div> 
         </form>
     </section>

@@ -170,16 +170,14 @@ function mascara(i){
 
     
  }
- $(document).ready(function(){
-            
-    $("input[name='cpf']").blur(function(){
-        
-        
+ $(document).ready(function() {
+    $("input[name='cpf']").blur(function() {
         var $nome_analista = $("input[name='nome']");
         var $nasc_analista = $("input[name='datanasc']");
         var $empresa = $("#selectEmpresa");
         var $ativo = $("#ativo");
-        var $cargo = $("#usuarioCargo")
+        var $cargo = $("#usuarioCargo");
+        var $categoria = $("#usuarioCategoria");
         var $cep = $("input[name='cep']");
         var $endereco = $("input[name='rua']");
         var $numero = $("input[name='numero']");
@@ -189,10 +187,10 @@ function mascara(i){
         var $estado = $("input[name='estado']");
         var $uf = $("input[name='uf']");
 
-        $.getJSON('function.php',{
-            cpf: $ (this).val().replace(/[^\d]/g, '')
-        }, function(json){
-            if(json.cpf){
+        $.getJSON('function.php', {
+            cpf: $(this).val().replace(/[^\d]/g, '')
+        }, function(json) {
+            if (json.cpf) {
                 $nome_analista.val(json.nome);
                 $nasc_analista.val(json.data_nasc);
                 $empresa.val(json.id_empresa);
@@ -202,7 +200,8 @@ function mascara(i){
                     $ativo.val('N');
                 }
                 $cargo.val(json.idcargos);
-                $cep.val(json.cep);
+                $categoria.val(json.categoria_id);
+                $cep.val(0 + json.cep);
                 $endereco.val(json.endereco);
                 $numero.val(json.numero);
                 $complemento.val(json.complemento);
@@ -210,14 +209,14 @@ function mascara(i){
                 $cidade.val(json.cidade);
                 $estado.val(json.estado);
                 $uf.val(json.uf);
-                $(".btn").val('atualizar');
-
-            }else{
+                $(".btn").val('Atualizar');
+            } else {
                 $nome_analista.val('');
                 $nasc_analista.val('');
                 $empresa.val('0');
                 $ativo.val('');
                 $cargo.val('0');
+                $categoria.val('0');
                 $cep.val('');
                 $endereco.val('');
                 $numero.val('');
@@ -228,9 +227,53 @@ function mascara(i){
                 $uf.val('');
                 $(".btn").val('Cadastrar');
             }
-
-
-
         });
     });
+
+    $('#UsuarioSelect').change(function() {
+        var selectedOption = $(this).find('option:selected').val();
+        if (selectedOption != 0) {
+            console.log("Atualizar");
+            $(".btn").val('Atualizar');
+        } else {
+            console.log("Cadastrar");
+            $(".btn").val('Cadastrar');
+        }
+
+        var selectedOptionData = $(this).find('option:selected');
+        var nome = selectedOptionData.attr('data-nome');
+        var cpf = selectedOptionData.attr('data-cpf');
+        var dataNasc = selectedOptionData.attr('data-datanasc');
+        var empresa = selectedOptionData.attr('data-empresa');
+        var ativo = selectedOptionData.attr('data-ativo');
+        var cargo = selectedOptionData.attr('data-cargo');
+        var categoria = selectedOptionData.attr('data-categoria');
+        var cep = selectedOptionData.attr('data-cep');
+        var rua = selectedOptionData.attr('data-rua');
+        var numero = selectedOptionData.attr('data-numero');
+        var complemento = selectedOptionData.attr('data-complemento');
+        var bairro = selectedOptionData.attr('data-bairro');
+        var cidade = selectedOptionData.attr('data-cidade');
+        var estado = selectedOptionData.attr('data-estado');
+        var uf = selectedOptionData.attr('data-uf');
+
+        $('#nome').val(nome);
+        $('#cpf').val(cpf);
+        $('#datanasc').val(dataNasc);
+        $('#selectEmpresa').val(empresa);
+        $('#ativo').val(ativo);
+        $('#usuarioCargo').val(cargo);
+        $('#usuarioCategoria').val(categoria);
+        $('#cep').val(cep);
+        $('#rua').val(rua);
+        $('#numero').val(numero);
+        $('#complemento').val(complemento);
+        $('#bairro').val(bairro);
+        $('#cidade').val(cidade);
+        $('#estado').val(estado);
+        $('#uf').val(uf);
+    });
+    $('.btnNovo').click(function(){
+        $('.btn').val('Cadastrar');
+    })
 });

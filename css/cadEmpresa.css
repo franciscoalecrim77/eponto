@@ -9,6 +9,7 @@
 
 
 .divCnpj{
+    margin-top: 15px;
     display: block;
     height:35px;
 }
@@ -71,4 +72,17 @@
     font-size: 15px;
     width: 100px;
     height: 30px;
+}
+
+
+.labelEmpresasCadastradas{
+    font-weight: 400;
+    display: inline;
+    /* width: 50px; */
+    font-size: 20px;
+}
+
+.listaEmpresa{
+    font-size: 15px;
+    width: 400px;
 }

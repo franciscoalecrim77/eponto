@@ -1,0 +1,66 @@
+.divTabela{
+    
+    display: inline-block;
+    position: fixed;
+    left: 260px;
+    top: 110px;
+}
+
+.tituloTabela{
+    margin-top: 0px;
+    font-size: 20px;
+    height: 25px;
+    background-color: #0b5d94;
+    text-align: center;
+    color: white;
+}
+.esconder{
+    display: none;
+}
+.descricaoTabela{
+    margin-right: 0px;
+    background-color: #A7A9AC;
+    color: rgb(0, 0, 0);
+}
+
+th{
+    border: 2px solid rgb(0, 0, 0);
+    height: 10px;
+    width: 130px;
+    font-size: 15px;
+
+}
+td {
+    font-size: 15px;
+    font-weight: bold;
+}
+.conteudo td{
+    border: 2px solid rgb(0, 0, 0);
+    text-align: center;
+
+}
+
+.divTabelaAdministrador{
+    display: inline-block;
+    position: fixed;
+    left: 260px;
+    top: 400px;
+}
+
+.edit-icon {
+    position: relative;
+    left: 5px; /* ou outro valor de ajuste que desejar */
+}
+
+
+.labelUsuariosCadastrados{
+    padding: 10px;
+    font-size: 20px;
+    margin: 5px 0px 5px 0px;
+    
+}
+
+.listaUsuarios{
+    font-size: 15px;
+    width: 300px;
+}

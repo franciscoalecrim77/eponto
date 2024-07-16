@@ -12,7 +12,7 @@ function consultaEmpresa($cnpj,$mysqli){
             razao,
             fantasia
         FROM
-            eponto.empresas
+            empresas
         where
             cnpj = '$cnpj'";
     $resultado_empresa = mysqli_query($mysqli, $result_empresa);

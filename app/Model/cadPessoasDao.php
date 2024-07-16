@@ -56,6 +56,14 @@ class cadPessoasDao{
         return $resultado;
    }
 
+   public function consultaCompleta(){
+    $sql = 'SELECT p.id, p.cpf, p.nome, p.data_nasc, p.id_empresa, p.ativo, p.idcargos, p.categoria_id, e.cep, e.endereco, e.numero, e.complemento, e.bairro, e.cidade, e.estado, e.uf FROM enderecos e INNER JOIN pessoas p ON p.id = e.pessoa_id';
+    $stmt = Conn::getConn()->prepare($sql);
+    $stmt->execute();
+    $resultado = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    return $resultado;
+   }
+
    public function update(CadPessoas $cd) {
     $sql = 'UPDATE pessoas SET nome = ?, data_nasc = ?, id_empresa = ?, ativo = ?, idcargos = ?, categoria_id = ? WHERE cpf = ?';
     $stmt = Conn::getConn()->prepare($sql);
@@ -68,6 +76,14 @@ class cadPessoasDao{
     $stmt->bindValue(7, $cd->getCPF());
     $stmt->execute();
 }
+
+    public function categoria(){
+        $sql = "SELECT * FROM categoria";
+        $stmt = Conn::getConn()->prepare($sql);
+        $stmt->execute();
+        $resultado = $stmt->fetchALL(\PDO::FETCH_ASSOC);
+        return $resultado;
+    }
 }
 
 

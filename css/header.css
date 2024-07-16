@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+.disabled {
+    pointer-events: none; /* Desabilita cliques */
+    opacity: 0.5; /* Faz o botão parecer desativado */
+    cursor: not-allowed; /* Muda o cursor para indicar que não é clicável */
+}
+
 header{
     display: flex;
     height: 100px;
@@ -304,6 +310,22 @@ fieldset {
     font-size: 15px;
 }
 
+.labelUsuarioCategoria{
+    font-weight: 400;
+    display: inline;
+    /* width: 50px; */
+    font-size: 20px;
+}
+
+.selectUsuarioCategoria{
+    margin-top: 10px;
+    margin-left: 37px;
+    width: 220px;
+    font-size: 15px;
+}
+
+
+
 .cadastroEndereco{
     display: flex;
     
@@ -460,14 +482,28 @@ fieldset {
     display: inline-block;
     margin: 0 auto;
     margin-top: 45px;
-    margin-left: 470px;
+    /* margin-left: 550px; */
 }
 
+.novo{
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 45px;
+    margin-left: 550px;
+}
+
+.btnNovo{
+    border-radius: 5px;
+    font-size: 15px;
+    width: 120px;
+    height: 30px;
+}
 .btn{
-border-radius: 5px;
-font-size: 15px;
-width: 100px;
-height: 30px;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 120px;
+    height: 30px;
 }
 
 footer{
@@ -482,3 +518,21 @@ footer{
 }
 
 
+
+.usuariosCadastrados{
+    margin-top: 10px;
+    display: inline-block;
+    margin-left: 500px;
+}
+
+.labelUsuarioSelect{
+    font-weight: 400;
+    display: inline;
+    /* width: 50px; */
+    font-size: 20px;
+}
+.UsuarioSelect{
+    margin-left: 10px;
+    font-size: 15px;
+    width: 300px;
+}

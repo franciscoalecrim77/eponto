@@ -9,7 +9,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 $validado = null;    
 $usuarioLogado = Null;
-$validado = NULL;
 $email =    (empty($_POST['email']))? false : $_POST['email'];
 $password = (empty($_POST['password']))? false : $_POST['password'];
 
@@ -18,19 +17,20 @@ $credenciais->setEmail($email);
 $credenciais->setPassword(base64_encode($password));
 $validaLoginDao = new \App\Model\validaLoginDao();
 $validaLoginDao->validaLogin($credenciais);
+// var_dump($credenciais);
 foreach($validaLoginDao->validaLogin($credenciais) as $validado):
-//   var_dump($validado);
+    // var_dump($validaLoginDao);
+    
 endforeach;
 
-if($validado == null){
-    $validado == 0;
-}else{
-    $idUsuario = $validado['id'];
-}
+
+// if($validado == null){
+//     $validado = 0;
+// }else{
+//     $idUsuario = $validado['id'];
+// }
 // $idUsuario = $validado['id_usuario'];
 
-
-//var_dump($idUsuario);
 
 
     if(strlen($_POST['email']) == 0){
@@ -41,20 +41,25 @@ if($validado == null){
 
 }else if($validado >= 1){   
     $usuarioLogado = $validado;
+    $validaPermissao = new \App\Model\validaLoginDao;
+    $permissao = $validaPermissao->idSessao($credenciais);
     !isset($_SESSION);
     
+
+
     session_start();
     
-    $_SESSION['id'] = $validado['pessoa_id'];
-
+    $_SESSION['id'] = $permissao['pessoa_id'];
+    $_SESSION['categoria'] = $permissao['categoria_id'];
+    // var_dump($_SESSION);
+// exit;
     header("location: gerencial.php");
-    exit;
+
 
 
 }else {
     echo "<script>alert('Email ou senha incorretos! Tente novamente.');</script>";
    
-
 }
 
 }

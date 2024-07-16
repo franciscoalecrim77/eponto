@@ -8,12 +8,14 @@ date_default_timezone_set('America/Sao_Paulo');
 
 function retorna($cpf, $mysqli){
     $result_analista = "SELECT
+    p.id,
     p.cpf,
     p.nome,
     p.data_nasc,
     p.id_empresa,
     p.ativo,
     p.idcargos,
+    p.categoria_id,
     e.cep,
     e.endereco,
     e.numero,
@@ -31,12 +33,14 @@ WHERE
     $resultado_analista = mysqli_query($mysqli, $result_analista);
     if($resultado_analista->num_rows > 0){
         $row_analista = mysqli_fetch_array($resultado_analista);
+        $valores['id'] = $row_analista['id'];
         $valores['cpf'] = $row_analista['cpf'];
         $valores['nome'] = $row_analista['nome'];
         $valores['data_nasc'] = $row_analista['data_nasc'];
         $valores['id_empresa'] = $row_analista['id_empresa'];
         $valores['ativo'] = $row_analista['ativo'];
         $valores['idcargos'] = $row_analista['idcargos'];
+        $valores['categoria_id'] = $row_analista['categoria_id'];
         $valores['cep'] = $row_analista['cep'];
         $valores['endereco'] = $row_analista['endereco'];
         $valores['numero'] = $row_analista['numero'];

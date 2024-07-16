@@ -21,4 +21,23 @@ $(document).ready(function(){
 
         });
     });
+
+    
+});
+
+$(document).ready(function() {
+    $('#listaEmpresa').change(function() {
+        // Pega a opção selecionada
+        var selectedOption = $(this).find('option:selected');
+        
+        // Pega os valores dos atributos data
+        var cnpj = selectedOption.data('cnpj');
+        var razaoSocial = selectedOption.data('razaoSocial');
+        var nomeFantasia = selectedOption.data('nomeFantasia');
+        
+        // Preenche os campos com os valores
+        $('#cnpj').val(cnpj);
+        $('#razaoSocial').val(razaoSocial);
+        $('#nomeFantasia').val(nomeFantasia);
+    });
 });

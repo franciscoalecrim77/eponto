@@ -48,8 +48,6 @@ class CadPessoas{
         $this->empresa = $em;
     }
 
-
-
     public function getAtivo(){
         return $this->ativo;
     }
@@ -77,6 +75,7 @@ class CadPessoas{
     public function getConsulta(){
         return $this->consulta;
     }
+    
     public function setConsulta($con){
         $this->consulta = $con;
     }

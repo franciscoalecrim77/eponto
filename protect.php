@@ -9,6 +9,7 @@ if(!isset($_SESSION)){
 //Se não tem uma sessão iniciada com o id do usuario, ele da a mensagem abaixo.
 if(!isset($_SESSION['id']))
 
-    die("Voce não pode acessar este conteudo, pois não esta logado. <p>")
+    // die("Voce não pode acessar este conteudo, pois não esta logado. <p>")
+    die("<script>alert('Voce não pode acessar este conteudo, pois não esta logado.')</script>");
 
 ?>
